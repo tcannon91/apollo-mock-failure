@@ -1,0 +1,5 @@
+{
+  "exec": "node --inspect ./node_modules/.bin/ts-node --project tsconfig.server.json --require dotenv/config src/server/index.ts dotenv_config_path=.env.development",
+  "watch": ["server", "static"],
+  "ext": "js ts"
+}

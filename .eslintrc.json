@@ -1,0 +1,113 @@
+{
+  "extends": [
+    "plugin:jest/recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:cypress/recommended",
+    "airbnb",
+    "@bheng/bhp"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "cypress",
+    "jest",
+    "jsx-a11y",
+    "eslint-plugin-tsdoc"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "arrow-body-style": 0,
+    "compat/compat": 0,
+    "import/extensions": 0,
+    "import/no-unresolved": 0,
+    "@typescript-eslint/no-extra-semi": 0,
+    "@typescript-eslint/ban-ts-comment": "off",
+    "max-len": [
+      2,
+      100, // maximum line length
+      2, // tabWidth
+      {
+        "ignoreUrls": true,
+        "ignoreComments": false,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    ],
+    "react/prop-types": 0,
+    "tsdoc/syntax": 1,
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "assert": "either"
+      }
+    ],
+    "@typescript-eslint/no-var-requires": 0,
+    "consistent-return": "warn",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": [
+      "error"
+    ],
+    "react/jsx-no-bind": [
+      1,
+      {
+        "allowArrowFunctions": true,
+        "allowFunctions": true
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "tests/**"
+      ],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": 1,
+        "lines-between-class-members": 0,
+        "no-unused-expressions": 0,
+        "no-use-before-define": 0,
+        "jest/valid-expect": 0,
+        "@typescript-eslint/explicit-function-return-type": 0,
+        "global-require": 0
+      }
+    },
+    {
+      "files": [
+        "./setupTests.tsx"
+      ],
+      "rules": {
+        "import/no-extraneous-dependencies": 0
+      }
+    },
+    {
+      "files": [
+        "cypress/**"
+      ],
+      "rules": {
+        "@typescript-eslint/no-var-requires": 0,
+        "import/no-extraneous-dependencies": 0,
+        "jest/expect-expect": 0
+      }
+    }
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
